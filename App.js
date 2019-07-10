@@ -1,41 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import BodyText from './src/elements/BodyText';
+import AppBar from './src/components/AppBar';
+import MemoList from './src/components/MemoList';
+import CircleButton from './src/elements/CircleButton';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.appbar}>
-        <View>
-          <Text>MemoApp</Text>
-        </View>
-      </View>
-
-      <View style={styles.memoList}>
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>講座のアイテム</Text>
-          <Text style={styles.memoDate}>2019/07/10</Text>
-        </View>
-      </View>
-
-      <View style={styles.memoList}>
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>小原鞠莉</Text>
-          <Text style={styles.memoDate}>2019/06/13</Text>
-        </View>
-      </View>
-
-      <View style={styles.memoList}>
-        <View style={styles.memoListItem}>
-          <Text style={styles.memoTitle}>津島善子</Text>
-          <Text style={styles.memoDate}>2019/07/15</Text>
-        </View>
-      </View>
-
-      <View>
-        <Text>+</Text>
-      </View>
+      <AppBar />
+      <MemoList />
+      <CircleButton>+</CircleButton>
     </View>
   );
 }
@@ -43,8 +18,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFDF6',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 78,
   },
 });
