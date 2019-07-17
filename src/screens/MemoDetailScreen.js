@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+import ThreeAxisSensor from 'expo-sensors/build/ThreeAxisSensor';
 import CircleButton from '../elements/CircleButton';
 
 class MemoDetailScreen extends React.Component {
@@ -20,7 +21,12 @@ class MemoDetailScreen extends React.Component {
           </Text>
         </View>
 
-        <CircleButton name="pencil" color="white" style={styles.editButton} />
+        <CircleButton
+          name="pencil"
+          color="white"
+          style={styles.editButton}
+          onPress={() => { this.props.navigation.navigate('MemoEdit'); }}
+        />
       </View>
 
     );
