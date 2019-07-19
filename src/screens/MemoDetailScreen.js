@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import ThreeAxisSensor from 'expo-sensors/build/ThreeAxisSensor';
 import CircleButton from '../elements/CircleButton';
 
 class MemoDetailScreen extends React.Component {
