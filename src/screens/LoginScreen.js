@@ -24,6 +24,7 @@ class LoginScreen extends React.Component {
           onChangeText={(text) => { this.setState({ password: text }); }}
           autoCapitalize="none"
           placeholder="Email Address"
+          secureTextEntry
         />
         <TouchableHighlight
           style={styles.button}
