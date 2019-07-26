@@ -3,17 +3,34 @@ import {
   StyleSheet, View, Text, TextInput, TouchableHighlight,
 } from 'react-native';
 
-import CircleButton from '../elements/CircleButton';
-
 class LoginScreen extends React.Component {
+  state = {
+    email : '',
+    password : '',
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>ログイン</Text>
-        <TextInput style={styles.input} value="Email address" />
-        <TextInput style={styles.input} value="password" />
-        <TouchableHighlight style={styles.button} underlayColor="#C70f66" onPress={() => {}}>
-          <Text>送信</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => { this.setState({ email: text }); }}
+          autoCapitalize="none"
+          placeholder="Email Address"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => { this.setState({ password: text }); }}
+          autoCapitalize="none"
+          placeholder="Email Address"
+        />
+        <TouchableHighlight
+          style={styles.button}
+          underlayColor="#C70f66"
+          onPress={() => { this.props.navigation.navigate('Home'); }}
+        >
+          <Text>ログインする</Text>
         </TouchableHighlight>
       </View>
     );
